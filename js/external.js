@@ -3,7 +3,7 @@ function checkExternal () {
   const urlParams = new URLSearchParams(queryString);
   const token = urlParams.get('token')
   const expires = urlParams.get('Expires')
-  const signature = urlParams.get('Signature')
+  const signature = encodeURIComponent(urlParams.get('Signature'))
   if (!token) {
     window.location.href = 'index.html'
   }
